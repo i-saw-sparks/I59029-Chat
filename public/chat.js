@@ -1,5 +1,7 @@
 // Make connection
-var socket = io.connect('http://localhost:4000');
+import port from '../index'
+
+var socket = io.connect('http://localhost:'+port);
 
 // Query DOM
 var message = document.getElementById('message'),
