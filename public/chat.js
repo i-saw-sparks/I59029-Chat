@@ -1,7 +1,6 @@
 // Make connection
-import port from '../index'
+var socket = io.connect('http://localhost:'+ process.env.PORT || 8080);
 
-var socket = io.connect('http://localhost:'+port);
 
 // Query DOM
 var message = document.getElementById('message'),
@@ -12,6 +11,7 @@ var message = document.getElementById('message'),
 
 // Emit events
 btn.addEventListener('click', function () {
+    console.log(message.value)
     if (message.value != "") {
         socket.emit('chat', {
             message: message.value,
