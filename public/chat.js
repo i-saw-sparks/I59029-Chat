@@ -1,5 +1,5 @@
-// Make connection
-var socket = io.connect('http://localhost:'+ process.env.PORT || 8080);
+let url = window.location.href;
+var socket = io.connect(url);
 
 
 // Query DOM
